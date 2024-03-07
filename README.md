@@ -85,37 +85,32 @@
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建 OpenSCAD</font></font></h2><a id="user-content-building-openscad" class="anchor" aria-label="永久链接：构建 OpenSCAD" href="#building-openscad"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要从源代码构建 OpenSCAD，请按照下面适用于您的平台的说明进行操作。</font></font></p>
 <div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">先决条件</font></font></h3><a id="user-content-prerequisites" class="anchor" aria-label="永久链接：先决条件" href="#prerequisites"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">To build OpenSCAD, you need some libraries and tools. The version
-numbers in brackets specify the versions which have been used for
-development. Other versions may or may not work as well.</p>
-<p dir="auto">If you're using a newer version of Ubuntu, you can install these
-libraries from aptitude. If you're using Mac, or an older Linux/BSD, there
-are build scripts that download and compile the libraries from source.
-Follow the instructions for the platform you're compiling on below.</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要构建 OpenSCAD，您需要一些库和工具。</font><font style="vertical-align: inherit;">括号中的版本号指定已用于开发的版本。</font><font style="vertical-align: inherit;">其他版本可能也可能不工作。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您使用的是较新版本的 Ubuntu，则可以从 aptitude 安装这些库。</font><font style="vertical-align: inherit;">如果您使用的是 Mac 或较旧的 Linux/BSD，则可以使用构建脚本从源代码下载并编译库。</font><font style="vertical-align: inherit;">请按照下面针对您正在编译的平台的说明进行操作。</font></font></p>
 <ul dir="auto">
-<li>A C++ compiler supporting C++17</li>
-<li><a href="https://cmake.org/" rel="nofollow">cmake (3.5 -&gt;)</a></li>
-<li><a href="https://qt.io/" rel="nofollow">Qt (5.4 -&gt;)</a></li>
-<li><a href="https://riverbankcomputing.com/software/qscintilla/" rel="nofollow">QScintilla2 (2.9 -&gt;)</a></li>
-<li><a href="https://www.cgal.org/" rel="nofollow">CGAL (5.4 -&gt;)</a></li>
-<li><a href="https://gmplib.org/" rel="nofollow">GMP (5.x)</a></li>
-<li><a href="https://www.mpfr.org/" rel="nofollow">MPFR (3.x)</a></li>
-<li><a href="https://www.boost.org/" rel="nofollow">boost (1.56 -&gt;)</a></li>
-<li><a href="http://www.opencsg.org/" rel="nofollow">OpenCSG (1.4.2 -&gt;)</a></li>
-<li><a href="http://glew.sourceforge.net/" rel="nofollow">GLEW (1.5.4 -&gt;)</a></li>
-<li><a href="https://eigen.tuxfamily.org/" rel="nofollow">Eigen (3.x)</a></li>
-<li><a href="https://developer.gnome.org/glib/" rel="nofollow">glib2 (2.x)</a></li>
-<li><a href="https://fontconfig.org/" rel="nofollow">fontconfig (2.10 -&gt; )</a></li>
-<li><a href="https://freetype.org/" rel="nofollow">freetype2 (2.4 -&gt; )</a></li>
-<li><a href="https://www.freedesktop.org/wiki/Software/HarfBuzz/" rel="nofollow">harfbuzz (0.9.19 -&gt; )</a></li>
-<li><a href="https://libzip.org/" rel="nofollow">libzip (0.10.1 -&gt; )</a></li>
-<li><a href="https://www.gnu.org/software/bison/" rel="nofollow">Bison (2.4 -&gt; )</a></li>
-<li><a href="http://flex.sourceforge.net/" rel="nofollow">Flex (2.5.35 -&gt; )</a></li>
-<li><a href="https://www.freedesktop.org/wiki/Software/pkg-config/" rel="nofollow">pkg-config (0.26 -&gt; )</a></li>
-<li><a href="https://github.com/google/double-conversion/">double-conversion (2.0.1 -&gt; )</a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持 C++17 的 C++ 编译器</font></font></li>
+<li><a href="https://cmake.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cmake (3.5 -&gt;)</font></font></a></li>
+<li><a href="https://qt.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Qt（5.4 -&gt;）</font></font></a></li>
+<li><a href="https://riverbankcomputing.com/software/qscintilla/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">QScintilla2 (2.9 -&gt;)</font></font></a></li>
+<li><a href="https://www.cgal.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CGAL (5.4 -&gt;)</font></font></a></li>
+<li><a href="https://gmplib.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GMP (5.x)</font></font></a></li>
+<li><a href="https://www.mpfr.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MPFR (3.x)</font></font></a></li>
+<li><a href="https://www.boost.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提升 (1.56 -&gt;)</font></font></a></li>
+<li><a href="http://www.opencsg.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenCSG (1.4.2 -&gt;)</font></font></a></li>
+<li><a href="http://glew.sourceforge.net/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GLEW (1.5.4 -&gt;)</font></font></a></li>
+<li><a href="https://eigen.tuxfamily.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本征 (3.x)</font></font></a></li>
+<li><a href="https://developer.gnome.org/glib/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">glib2 (2.x)</font></font></a></li>
+<li><a href="https://fontconfig.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">字体配置 (2.10 -&gt; )</font></font></a></li>
+<li><a href="https://freetype.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">freetype2 (2.4 -&gt; )</font></font></a></li>
+<li><a href="https://www.freedesktop.org/wiki/Software/HarfBuzz/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">harfbuzz (0.9.19 -&gt; )</font></font></a></li>
+<li><a href="https://libzip.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">libzip (0.10.1 -&gt; )</font></font></a></li>
+<li><a href="https://www.gnu.org/software/bison/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">野牛 (2.4 -&gt; )</font></font></a></li>
+<li><a href="http://flex.sourceforge.net/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">弹性 (2.5.35 -&gt; )</font></font></a></li>
+<li><a href="https://www.freedesktop.org/wiki/Software/pkg-config/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">pkg-config (0.26 -&gt; )</font></font></a></li>
+<li><a href="https://github.com/google/double-conversion/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">双转换 (2.0.1 -&gt; )</font></font></a></li>
 </ul>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Getting the source code</h3><a id="user-content-getting-the-source-code" class="anchor" aria-label="永久链接：获取源代码" href="#getting-the-source-code"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">Install git (<a href="https://git-scm.com/" rel="nofollow">https://git-scm.com/</a>) onto your system. Then run a clone:</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获取源代码</font></font></h3><a id="user-content-getting-the-source-code" class="anchor" aria-label="永久链接：获取源代码" href="#getting-the-source-code"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 git ( </font></font><a href="https://git-scm.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://git-scm.com/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ) 安装到您的系统上。</font><font style="vertical-align: inherit;">然后运行克隆：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>git clone https://github.com/openscad/openscad.git
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/openscad/openscad.git" tabindex="0" role="button">
@@ -127,8 +122,8 @@ Follow the instructions for the platform you're compiling on below.</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">This will download the latest sources into a directory named <code>openscad</code>.</p>
-<p dir="auto">To pull the various submodules (incl. the <a href="https://github.com/openscad/MCAD">MCAD library</a>), do the following:</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这会将最新源下载到名为 的目录中</font></font><code>openscad</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要提取各种子模块（包括</font></font><a href="https://github.com/openscad/MCAD"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MCAD 库</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">），请执行以下操作：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>cd openscad
 git submodule update --init --recursive
 </code></pre><div class="zeroclipboard-container">
@@ -142,18 +137,18 @@ git submodule update --init --recursive" tabindex="0" role="button">
 </svg>
     </clipboard-copy>
   </div></div>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Building for macOS</h3><a id="user-content-building-for-macos" class="anchor" aria-label="永久链接：为 macOS 构建" href="#building-for-macos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">Prerequisites:</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为 macOS 构建</font></font></h3><a id="user-content-building-for-macos" class="anchor" aria-label="永久链接：为 macOS 构建" href="#building-for-macos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">先决条件：</font></font></p>
 <ul dir="auto">
-<li>Xcode</li>
-<li>automake, libtool, cmake, pkg-config, wget, meson (we recommend installing these using Homebrew)</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Xcode</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">automake、libtool、cmake、pkg-config、wget、meson（我们建议使用 Homebrew 安装这些）</font></font></li>
 </ul>
-<p dir="auto">Install Dependencies:</p>
-<p dir="auto">After building dependencies using one of the following options, follow the instructions in the <em>Compilation</em> section.</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装依赖项：</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用以下选项之一构建依赖项后，请按照</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编译</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">部分中的说明进行操作。</font></font></p>
 <ol dir="auto">
 <li>
-<p dir="auto"><strong>From source</strong></p>
-<p dir="auto">Run the script that sets up the environment variables:</p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从源头</font></font></strong></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行设置环境变量的脚本：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code> source scripts/setenv-macos.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value=" source scripts/setenv-macos.sh" tabindex="0" role="button">
@@ -165,7 +160,7 @@ git submodule update --init --recursive" tabindex="0" role="button">
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">Then run the script to compile all the dependencies:</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后运行脚本来编译所有依赖项：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code> ./scripts/macosx-build-dependencies.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value=" ./scripts/macosx-build-dependencies.sh" tabindex="0" role="button">
@@ -179,7 +174,7 @@ git submodule update --init --recursive" tabindex="0" role="button">
   </div></div>
 </li>
 <li>
-<p dir="auto"><strong>Homebrew</strong> (assumes <a href="https://brew.sh/" rel="nofollow">Homebrew</a> is already installed)</p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Homebrew</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（假设</font><font style="vertical-align: inherit;">已安装</font></font><a href="https://brew.sh/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Homebrew ）</font></font></a><font style="vertical-align: inherit;"></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code> ./scripts/macosx-build-homebrew.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value=" ./scripts/macosx-build-homebrew.sh" tabindex="0" role="button">
@@ -193,12 +188,8 @@ git submodule update --init --recursive" tabindex="0" role="button">
   </div></div>
 </li>
 </ol>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Building for Linux/BSD</h3><a id="user-content-building-for-linuxbsd" class="anchor" aria-label="永久链接：为 Linux/BSD 构建" href="#building-for-linuxbsd"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">First, make sure that you have git installed (often packaged as 'git-core'
-or 'scmgit'). Once you've cloned this git repository, download and install
-the dependency packages listed above using your system's package
-manager. A convenience script is provided that can help with this
-process on some systems:</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为 Linux/BSD 构建</font></font></h3><a id="user-content-building-for-linuxbsd" class="anchor" aria-label="永久链接：为 Linux/BSD 构建" href="#building-for-linuxbsd"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首先，确保您已安装 git（通常打包为“git-core”或“scmgit”）。</font><font style="vertical-align: inherit;">克隆此 git 存储库后，请使用系统的包管理器下载并安装上面列出的依赖项包。</font><font style="vertical-align: inherit;">提供了一个方便的脚本，可以帮助在某些系统上完成此过程：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>sudo ./scripts/uni-get-dependencies.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="sudo ./scripts/uni-get-dependencies.sh" tabindex="0" role="button">
@@ -210,8 +201,7 @@ process on some systems:</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">After installing dependencies, check their versions. You can run this
-script to help you:</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装依赖项后，检查它们的版本。</font><font style="vertical-align: inherit;">您可以运行此脚本来帮助您：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>./scripts/check-dependencies.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="./scripts/check-dependencies.sh" tabindex="0" role="button">
@@ -223,14 +213,9 @@ script to help you:</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">Take care that you don't have old local copies anywhere (<code>/usr/local/</code>).
-If all dependencies are present and of a high enough version, skip ahead
-to the Compilation instructions.</p>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Building for Linux/BSD on systems with older or missing dependencies</h3><a id="user-content-building-for-linuxbsd-on-systems-with-older-or-missing-dependencies" class="anchor" aria-label="永久链接：在具有较旧或缺失依赖项的系统上构建 Linux/BSD" href="#building-for-linuxbsd-on-systems-with-older-or-missing-dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto">If some of your system dependency libraries are missing or old, then you
-can download and build newer versions into <code>$HOME/openscad_deps</code> by
-following this process. First, run the script that sets up the
-environment variables.</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，您在任何地方都没有旧的本地副本 ( </font></font><code>/usr/local/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">)。</font><font style="vertical-align: inherit;">如果所有依赖项都存在并且版本足够高，请跳至编译说明。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在具有较旧或缺失依赖项的系统上构建 Linux/BSD</font></font></h3><a id="user-content-building-for-linuxbsd-on-systems-with-older-or-missing-dependencies" class="anchor" aria-label="永久链接：在具有较旧或缺失依赖项的系统上构建 Linux/BSD" href="#building-for-linuxbsd-on-systems-with-older-or-missing-dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您的某些系统依赖库丢失或过旧，那么您可以</font></font><code>$HOME/openscad_deps</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按照此过程下载并构建较新的版本。</font><font style="vertical-align: inherit;">首先，运行设置环境变量的脚本。</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>source ./scripts/setenv-unibuild.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="source ./scripts/setenv-unibuild.sh" tabindex="0" role="button">
@@ -242,7 +227,7 @@ environment variables.</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">Then run the script to compile all the prerequisite libraries above:</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后运行脚本来编译上面所有的必备库：</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>./scripts/uni-build-dependencies.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="./scripts/uni-build-dependencies.sh" tabindex="0" role="button">
@@ -254,9 +239,7 @@ environment variables.</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">Note that huge dependencies like gcc, qt, or glib2 are not included
-here, only the smaller ones (boost, CGAL, opencsg, etc). After the
-build, again check dependencies.</p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，这里不包括 gcc、qt 或 glib2 等巨大的依赖项，仅包含较小的依赖项（boost、CGAL、opencsg 等）。</font><font style="vertical-align: inherit;">构建完成后，再次检查依赖关系。</font></font></p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>./scripts/check-dependencies.sh
 </code></pre><div class="zeroclipboard-container">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="./scripts/check-dependencies.sh" tabindex="0" role="button">
@@ -268,8 +251,8 @@ build, again check dependencies.</p>
 </svg>
     </clipboard-copy>
   </div></div>
-<p dir="auto">After that, follow the Compilation instructions below.</p>
-<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Building for Windows</h3><a id="user-content-building-for-windows" class="anchor" aria-label="永久链接：为 Windows 构建" href="#building-for-windows"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">之后，按照下面的编译说明进行操作。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为 Windows 构建</font></font></h3><a id="user-content-building-for-windows" class="anchor" aria-label="永久链接：为 Windows 构建" href="#building-for-windows"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenSCAD for Windows 通常是从 Linux 交叉编译的。</font><font style="vertical-align: inherit;">如果您想尝试在 Windows 上构建 MSVC，请参阅此站点：
  </font></font><a href="https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Building_on_Windows" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https ://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Building_on_Windows</font></font></a></p>
 <p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要交叉构建，首先确保您拥有 MXE 项目的所有必需依赖项（在</font></font><a href="https://mxe.cc/#requirements" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://mxe.cc/#requirements</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中列出）。</font><font style="vertical-align: inherit;">不要安装 MXE 本身，下面的脚本将为您完成此操作</font></font><code>$HOME/openscad_deps/mxe</code></p>
